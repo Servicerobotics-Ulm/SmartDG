@@ -263,6 +263,7 @@ extern void Makedgdatajson(string Location = SmartDG_LiteFolderLocation);
 }
 #include "Dependency.h"
 #include "Environment.h"
+#include "TransferFunctionHelper.h"
 #include "TransferFunctionsNullNode.h"
 #include "TransferFunctionsIdealConnector.h"
 #include "DependencyObjectInstance.h"
