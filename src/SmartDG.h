@@ -99,8 +99,10 @@ namespace SmartDG {
 #define SmartDG_LOYs 50
 // Component Mode
 #define SmartDG_COMPONENTMODE_SCALE 1
-#define SmartDG_COMPONENTMODE_BusinessViewWindowWIDTH Fl::w()/1.2
-#define SmartDG_COMPONENTMODE_BusinessViewWindowHEIGHT Fl::h()/1.2
+//#define SmartDG_COMPONENTMODE_BusinessViewWindowWIDTH Fl::w()/1.2
+//#define SmartDG_COMPONENTMODE_BusinessViewWindowHEIGHT Fl::h()/1.2
+#define SmartDG_COMPONENTMODE_BusinessViewWindowWIDTH 1600
+#define SmartDG_COMPONENTMODE_BusinessViewWindowHEIGHT 900
 #define SmartDG_CMS SmartDG_COMPONENTMODE_SCALE
 #define SmartDG_COMPONENTMODE_MARGIN_TOP 100
 #define SmartDG_COMPONENTMODE_MARGIN_SIDE 50
