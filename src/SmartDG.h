@@ -66,8 +66,10 @@ namespace SmartDG {
 #define SmartDG_SYSTEM_TEST_MODE string("SYSTEM_TEST")
 
 // Window Geometry
-#define SmartDG_BusinessViewWindowWIDTH Fl::w()/2
-#define SmartDG_BusinessViewWindowHEIGHT Fl::h()/2
+//#define SmartDG_BusinessViewWindowWIDTH Fl::w()/2
+//#define SmartDG_BusinessViewWindowHEIGHT Fl::h()/2
+#define SmartDG_BusinessViewWindowWIDTH 960
+#define SmartDG_BusinessViewWindowHEIGHT 540
 #define SmartDG_MENUHEIGHT SmartDG_BusinessViewWindowHEIGHT/25
 //#define MENUHEIGHT 25
 #define SmartDG_SCALEFACTOR 1.5
