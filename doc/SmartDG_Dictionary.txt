@@ -42,3 +42,4 @@ showwiki
 godstr
 ng
 displaygod
+smartsoft
