@@ -19,18 +19,26 @@ echo "########################################## Installing mesa-common-dev"
 sudo apt-get $YOPTION install mesa-common-dev
 echo "########################################## Installing libxft-dev"
 sudo apt-get $YOPTION install libxft-dev
-echo "########################################## Cloning fltk"
-mkdir -p ~/SOFTWARE/
-cd ~/SOFTWARE/
-sudo rm -r ~/SOFTWARE/fltk
-git clone https://github.com/fltk/fltk.git
 echo "########################################## Installing fltk"
-cd ~/SOFTWARE/fltk
-mkdir ~/SOFTWARE/fltk/build
-cd ~/SOFTWARE/fltk/build
-cmake ..
-make
-sudo make install
+if [ -e "/usr/local/lib/libfltk.a" ]
+then
+echo "########################################## fltk | /usr/local/lib/libfltk.a already exists"
+echo "########################################## fltk | Manually re-install if desired"
+else
+echo "########################################## fltk | Cloning fltk"
+	mkdir -p ~/SOFTWARE/
+	cd ~/SOFTWARE/
+	sudo rm -r ~/SOFTWARE/fltk
+	git clone https://github.com/fltk/fltk.git
+	cd ~/SOFTWARE/fltk	
+echo "########################################## fltk | Building fltk"		
+	mkdir ~/SOFTWARE/fltk/build
+	cd ~/SOFTWARE/fltk/build
+	cmake ..
+	make
+echo "########################################## fltk | Installing fltk"		
+	sudo make install
+fi
 echo "########################################## Installing openjdk-11-jdk"
 sudo apt-get $YOPTION install openjdk-11-jdk
 java --version
