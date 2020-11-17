@@ -12,7 +12,7 @@ cat /usr/share/doc/build-essential/list
 [F] sudo apt-get install libglu1-mesa-dev
 [G] sudo apt-get install freeglut3-dev
 [H] sudo apt-get install mesa-common-dev
-[I] sudo apt-get -y install libxft-dev
+[I] sudo apt-get install libxft-dev
 [J] git clone https://github.com/fltk/fltk.git
 [K] Building fltk
 mkdir build
@@ -21,16 +21,17 @@ cmake ..
 make
 sudo make install
 
+[L] sudo apt-get install openjdk-11-jdk
+java --version
+sudo update-alternatives --config java
 
-
-
-[L] Installing Node.js
+[M] Installing Node.js
 sudo apt install nodejs
 node -v
-[M] Installing NPM
+[N] Installing NPM
 sudo apt install npm
 npm -v
-[N] Installing Browsersync
+[O] Installing Browsersync
 sudo npm install -g browser-sync
-[O] Test Browsersync
+Test Browsersync
 browser-sync start --server --directory --files '**/*' 
