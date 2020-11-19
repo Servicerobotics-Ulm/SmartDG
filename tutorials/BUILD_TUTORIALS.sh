@@ -1,3 +1,4 @@
+#!/bin/bash
 base_directory=$(pwd)
 rm -f .gitignore
 for tutorial_directory in */ ; do
@@ -18,4 +19,3 @@ for tutorial_directory in */ ; do
 	echo "-----------------------------------------------------------------------------"
 done
 echo $base_directory
-
