@@ -1,0 +1,47 @@
+#!/bin/bash
+
+echo "########################################## Install_Eclipse_SmartMDSD-DG START"
+TOOLCHAIN_NAME=SmartMDSD-DG
+echo "########################################## Installation target     : ${TOOLCHAIN_NAME}"
+ECLIPSE_BASE_VERSION=2020-09
+echo "########################################## Eclipse base version    : ${ECLIPSE_BASE_VERSION}"
+SMARTMDSD_REPO_URL="https://download.eclipse.org/smartmdsd/updates/releases/v3.15/${ECLIPSE_BASE_VERSION}"
+echo "########################################## SMARTMDSD_REPO_URL      : ${SMARTMDSD_REPO_URL}"
+SMARTMDSD_FEATURE_NAME="org.eclipse.smartmdsd.toolchain.source.feature.group"
+echo "########################################## SMARTMDSD_FEATURE_NAME  : ${SMARTMDSD_FEATURE_NAME}"
+SMARTDG_REPO_URL=https://github.com/Servicerobotics-Ulm/SmartDG-DSL
+SMARTDG_FEATURE_NAME=org.SmartDG.DSL.feature
+SMARTDG_RELEASE_NAME=v1.0
+SMARTDG_RELEASE_BUILD_FILENAME=SmartDG-DSL-v1.tar.gz
+echo "########################################## Downloading Eclipse Modeling Tools ${ECLIPSE_BASE_VERSION}"
+wget http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/technology/epp/downloads/release/${ECLIPSE_BASE_VERSION}/R/eclipse-modeling-${ECLIPSE_BASE_VERSION}-R-linux-gtk-x86_64.tar.gz
+echo "########################################## Extracting Eclipse Modeling Tools archive"
+tar -xzf eclipse-modeling-${ECLIPSE_BASE_VERSION}-R-linux-gtk-x86_64.tar.gz
+rm eclipse-modeling-${ECLIPSE_BASE_VERSION}-R-linux-gtk-x86_64.tar.gz
+mv eclipse $TOOLCHAIN_NAME
+echo "########################################## Installing SmartMDSD Plugins"
+cd $TOOLCHAIN_NAME
+./eclipse -noSplash -application org.eclipse.equinox.p2.director -repository https://download.eclipse.org/releases/${ECLIPSE_BASE_VERSION} -repository ${SMARTMDSD_REPO_URL} -installIU ${SMARTMDSD_FEATURE_NAME}
+echo "########################################## SmartMDSD Toolchain is installed into the folder: $TOOLCHAIN_NAME"
+SMARTDG_RELEASE_BUILD_URL=${SMARTDG_REPO_URL}/releases/download/${SMARTDG_RELEASE_NAME}/${SMARTDG_RELEASE_BUILD_FILENAME}
+echo "########################################## Installing SmartDG Plugins"
+echo "########################################## Downloading SmartDG feature | Name		: ${SMARTDG_FEATURE_NAME}"
+echo "########################################## Downloading SmartDG feature | Release	: ${SMARTDG_RELEASE_NAME}"
+echo "########################################## Downloading SmartDG feature | Repository	: ${SMARTDG_REPO_URL}"
+echo "########################################## Downloading SmartDG feature | File		: ${SMARTDG_RELEASE_BUILD_URL}"
+echo "########################################## Downloading SmartDG feature | Downloading	: Started"
+wget --no-check-certificate --content-disposition ${SMARTDG_RELEASE_BUILD_URL}
+echo "########################################## Downloading SmartDG feature | Downloading	: Finished"
+echo "########################################## Downloading SmartDG feature | Extracting	: ${SMARTDG_RELEASE_BUILD_FILENAME}"
+tar -xf ${SMARTDG_RELEASE_BUILD_FILENAME}
+rm ${SMARTDG_RELEASE_BUILD_FILENAME}
+echo "########################################## Downloading SmartDG feature | Extracted at	: $PWD"
+echo "########################################## Downloading SmartDG feature | Open Eclipse and Use"
+echo "########################################## Downloading SmartDG feature | Help >"
+echo "########################################## Downloading SmartDG feature | Install New Software >"
+echo "########################################## Downloading SmartDG feature | Add... >"
+echo "########################################## Downloading SmartDG feature | Local... >"
+echo "########################################## Downloading SmartDG feature | $PWD/build"
+echo "########################################## Downloading SmartDG feature | To add SmartDG feature to Eclipse"
+echo "########################################## Install_Eclipse_SmartMDSD-DG DONE"
+
