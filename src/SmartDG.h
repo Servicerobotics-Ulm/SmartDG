@@ -196,15 +196,15 @@ namespace SmartDG {
 
 // Debug
 #define SmartDG_DEBUG false
-#define SmartDG_DEBUG_ToggleAll SmartDG_DEBUG * true
+#define SmartDG_DEBUG_ToggleAll SmartDG_DEBUG && true
 
 // Solver
 #define SmartDG_CIRCULAR_DEPENDENCY_BREAKOUT_COUNT 1000
 
 // Sync
 #define SmartDG_SYNC true
-#define SmartDG_View2ViewFlag_DEFAULT_VALUE SmartDG_SYNC * true
-#define SmartDG_SolverSync_DEFAULT_VALUE 	SmartDG_SYNC * true
+#define SmartDG_View2ViewFlag_DEFAULT_VALUE SmartDG_SYNC && true
+#define SmartDG_SolverSync_DEFAULT_VALUE 	SmartDG_SYNC && true
 
 // System Commands
 #define SmartDG_XMESSAGE_SYNC_COMMAND "xmessage \"Synchronizing... Please Wait.\" -timeout 1 &"
