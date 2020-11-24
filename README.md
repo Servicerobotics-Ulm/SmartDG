@@ -1,6 +1,6 @@
 # SmartDG
 
-![alt text](SmartDG.png|width=42)
+![alt text](SmartDG.png)
 
 A C++ Library used by Dependency-Graph extension of SmartMDSD Toolchain
 
