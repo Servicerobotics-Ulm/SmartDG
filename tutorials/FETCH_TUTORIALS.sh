@@ -1,5 +1,18 @@
 #!/bin/bash
-
-
-echo "TODO sh"
-echo "TODO mp4"
+TARGET_FOLDER_NAME="tutorials"
+if [ -d ${TARGET_FOLDER_NAME} ]
+then
+	echo "A folder by the name ${TARGET_FOLDER_NAME} already exists. Remove or rename that folder and run this script again."
+else
+	SMARTDG_TUTORIALS_REPO_URL=https://github.com/Servicerobotics-Ulm/SmartDG-Tutorials
+	SMARTDG_TUTORIALS_RELEASE_NAME=v1.0
+	SMARTDG_TUTORIALS_RELEASE_BUILD_DIRNAME=SmartDG-Tutorials-1.0
+	
+	SMARTDG_TUTORIALS_RELEASE_BUILD_FILENAME=${SMARTDG_TUTORIALS_RELEASE_NAME}.tar.gz
+	SMARTDG_TUTORIALS_RELEASE_BUILD_URL=${SMARTDG_TUTORIALS_REPO_URL}/archive/${SMARTDG_TUTORIALS_RELEASE_BUILD_FILENAME}	
+	wget --no-check-certificate --content-disposition ${SMARTDG_TUTORIALS_RELEASE_BUILD_URL}
+	tar -xf ${SMARTDG_TUTORIALS_RELEASE_BUILD_DIRNAME}.tar.gz
+	rm ${SMARTDG_TUTORIALS_RELEASE_BUILD_DIRNAME}.tar.gz
+	rm -rf ${TARGET_FOLDER_NAME}
+	mv ${SMARTDG_TUTORIALS_RELEASE_BUILD_DIRNAME} ${TARGET_FOLDER_NAME}
+fi
